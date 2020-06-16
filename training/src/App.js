@@ -54,4 +54,11 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const withTitle = (WrappedComponent, title) => {
+  document.title = title;
+  return (props) => {
+    return <WrappedComponent {...props} />;
+  };
+};
+
+export default withTitle(App, "Home Page");
