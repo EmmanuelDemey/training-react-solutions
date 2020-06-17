@@ -6,7 +6,8 @@ const DISLIKE = "DISLIKE";
 
 // Selecteurs
 export const getNumberLikedPeople = (state) => state.length;
-export const isLiked = (state) => state.some((p) => p.url === person.url);
+export const isLiked = (state, person) =>
+  state.some((p) => p.url === person.url);
 
 // Action creators
 export const likeAction = (person) => ({ type: LIKE, payload: person });

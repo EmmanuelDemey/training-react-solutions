@@ -4,8 +4,10 @@ import PeopleFilter from "./PeopleFilter";
 import { useStarWarsPeople } from "./useStarWarsPeople";
 import { connect } from "react-redux";
 import { getNumberLikedPeople } from "./store";
+import { useTranslation } from "react-i18next";
 
 const Home = ({ numberLikedPeople }) => {
+  const { t, i18n } = useTranslation();
   const [input, setInput] = useState("");
   const [people, loading] = useStarWarsPeople();
 
@@ -21,9 +23,29 @@ const Home = ({ numberLikedPeople }) => {
 
   return (
     <section className="section">
+      <div className="is-pulled-right">
+        <button
+          className="button"
+          onClick={() => {
+            i18n.changeLanguage("fr");
+          }}
+        >
+          FR
+        </button>
+        <button
+          className="button"
+          onClick={() => {
+            i18n.changeLanguage("en");
+          }}
+        >
+          EN
+        </button>
+      </div>
       <div className="container">
-        <h1 className="title">Hello World</h1>
-        <p className="subtitle">Vous aimez {numberLikedPeople} personnages</p>
+        <h1 className="title">{t("HELLO_WORLD")}</h1>
+        <p className="subtitle">
+          {t("NB_LIKED_PEOPLE", { nb: numberLikedPeople })}
+        </p>
       </div>
       <PeopleFilter onChangeHandler={setInput} />
       <PeopleList people={filteredPeople} />

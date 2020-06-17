@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import Home from "./Home";
 import Person from "./Person";
 import { store } from "./store";
+import "./i18n";
 
 const App = () => {
   return (

@@ -28,7 +28,7 @@ const PeopleItem = ({ person, isLiked, like, dislike }) => {
 const mapStateToProps = (state, props) => {
   const { person } = props;
   return {
-    isLiked: isLiked(person),
+    isLiked: isLiked(state, person),
   };
 };
 
