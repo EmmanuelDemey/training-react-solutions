@@ -6,6 +6,7 @@ import PeopleFilter from "./PeopleFilter";
 function useStarWars() {
   const [people, setPeople] = useState([]);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     fetch("https://swapi.dev/api/people/")
       .then((response) => response.json())
