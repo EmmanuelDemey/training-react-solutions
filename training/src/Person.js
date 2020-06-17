@@ -6,6 +6,11 @@ const Person = () => {
   const { id } = useParams();
   const [person, loading] = useStarWarsPeople(id);
 
+  if (loading) {
+    return (
+      <progress className="progress is-small is-primary" max="100"></progress>
+    );
+  }
   return (
     <section className="section">
       <div className="container">
