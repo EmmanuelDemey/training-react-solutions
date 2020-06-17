@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PeopleList from "./PeopleList";
 import PeopleFilter from "./PeopleFilter";
 import { useStarWarsPeople } from "./useStarWarsPeople";
