@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import PeopleList from "./PeopleList";
 import PeopleFilter from "./PeopleFilter";
-import { useStarWarsPeople } from "./useStarWarsPeople";
+import { useFetch } from "./useFetch";
 
 const Home = () => {
   const [input, setInput] = useState("");
-  const [people, loading] = useStarWarsPeople();
+  const [people, loading] = useFetch();
 
   const filteredPeople = people.filter((person) => {
     return person.name.includes(input);
