@@ -1,10 +1,10 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { useStarWarsPeople } from "./useStarWarsPeople";
+import { useFetch } from "./useFetch";
 
 const Person = () => {
   const { id } = useParams();
-  const [person, loading] = useStarWarsPeople(id);
+  const [person, loading] = useFetch(id);
 
   if (loading) {
     return (

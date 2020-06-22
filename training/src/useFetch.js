@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function useStarWarsPeople(id = "") {
+export function useFetch(id = "") {
   const [people, setPeople] = useState([]);
   const [loading, setLoading] = useState(true);
 
