@@ -3,7 +3,7 @@ import "./App.css";
 import PeopleList from "./PeopleList";
 import PeopleFilter from "./PeopleFilter";
 
-function useStarWars() {
+function useFetch() {
   const [people, setPeople] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -19,7 +19,7 @@ function useStarWars() {
 
 const App = () => {
   const [input, setInput] = useState("");
-  const [people, loading] = useStarWars();
+  const [people, loading] = useFetch();
 
   const filteredPeople = people.filter((person) => {
     return person.name.includes(input);
